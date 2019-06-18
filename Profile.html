@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Profile</title>
+        <script>
+            Profil = 'anlegen'
+            //localStorage.getItem(Profil1)
+            //var myprofile = new Profil(Profil1)
+        </script>
+    </head>
+    <body> 
+        <h1 id="profil_header">Profil </h1>
+        <button onclick="location.href  = 'testsubject.html'" style="cursor: pointer;">back</button>
+        <button onclick="addProfile()" style="cursor: pointer;">add</button>
+        <script>
+
+        class Profil{
+            constructor(){
+                this.id = Math.floor(Math.random() * 100);
+                this.games = []
+            }
+        }
+
+        function addProfile() {
+            profil = new Profil()
+            profil.name = document.getElementById("Name1").value
+            profil.picture = document.getElementById("picture1").value
+            profil.color = document.getElementById("color1").value
+
+            document.getElementById("profil_header").innerHTML = 'Profil ' + profil.name
+            localStorage.setItem(profil.name, JSON.stringify(profil))
+        }   
+  //      var myprofile = new Profil("Hans", "einBild", "12345", "red")
+  //          console.log(myprofile.name, myprofile.picture, myprofile.id, myprofile.color)
+  //          localStorage.setItem(myprofile.name, JSON.stringify(myprofile))
+            // TODO
+            // 1. Klasse Profil erstellen (Werte von Tafel)
+            // 2. Profil Object erzeugen
+            // 3. Object mit den Daten aus den Inputs füllen
+            // 4. Object in deien localstorage speichern
+            
+        </script>  
+        <form> 
+            <label for="Name1"> Name </label>
+            <input type="text" id="Name1" > 
+            <label for="picture1"> Bild </label>
+            <input type="text" id="picture1" > 
+            <label for="color1"> color </label>
+            <input type="text" id="color1" >
+        </form>
+        
+    </body>
+</html>
+
+
+
+
+
+

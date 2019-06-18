@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bowlingtabelle</title>
+    <script>
+    var x = 1+2
+    </script>
+    <noscript>
+      Sie haben JavaScript deaktiviert.
+    </noscript>
+    <style>
+      Punktetabelle.blocktext
+        {    
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 100px;
+          display: block;
+          align-items: center;
+          text-align: center;
+          margin-top: 2%;
+          color: #000000;}</style>
+    <style>
+      /*img
+        { margin-left: 25%;
+          height:220px;
+          margin-top:8%;}*/   
+           </style>
+    <style>
+      table{
+        border-collapse:collapse;
+        border: 1px solid black;
+      }
+      td{
+        border: 1px solid black;
+      }
+    </style> 
+    <style> 
+      .button{ 
+      position:absolute;
+      top: 0px;
+      left: 0px;
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 20px 30px;
+      text-align: center;
+      font-size: 40px;
+      cursor: pointer;}</style>
+
+  </head>
+  <body>
+    <Punktetabelle class="blocktext">Punktetabelle</Punktetabelle>
+    <table>
+      <tr>
+        <td>Klaus</td>
+        <td><input type="text" id="PkteRunde1" min=0 max=10 style="width: 25px"></td>
+        <td><input type="text" id="PkteRunde2" min=0 max=10 style="width: 25px"></td>
+        <td><input type="text" id="PkteRunde3" min=0 max=10 style="width: 25px"></td>
+        <td><input type="text" id="PkteRunde4" min=0 max=10 style="width: 25px"></td>
+      </tr>
+      <tr>
+        <td>Berbel</td>
+        <td><input type="text" id="PkteRunde1" min=0 max=10 style="width: 25px"></td>
+        <td><input type="text" id="PkteRunde2" min=0 max=10 style="width: 25px"></td>
+        <td><input type="text" id="PkteRunde3" min=0 max=10 style="width: 25px"></td>
+        <td><input type="text" id="PkteRunde4" min=0 max=10 style="width: 25px"></td>
+      </tr>
+
+    </table>
+    <button class="button" onclick="location.href = 'Profile.html'" >Profile</button>
+    <div>
+        <h1><var>Listenüberschrift</var></h1>
+        <h2>Listenüberschrift</h2>
+        <h3>Listenüberschrift</h3>
+        <h4>Listenüberschrift</h4>
+        <h5>Listenüberschrift</h5>
+        <h6>Listenüberschrift</h6>
+
+        <ul>
+          <li>Listenpunkt 1</li>
+          <li>Listenpunkt 2</li>
+          <li>Listenpunkt 3</li>
+        </ul>
+    </div>
+    <SumSchrift SumSchrift = "cool" ></SumSchrift>
+    <input type="text" name="vorname" id="vorname" onchange="test()">
+    <script>
+      var msg = document.getElementById("vorname").value;
+      console.log(msg)
+
+      function test(){
+        var msg = document.getElementById("vorname").value;
+        console.log(msg)
+        SumSchrift = "cool"
+        a = 1
+        b = 2
+        c = "nice"
+        alert(c)
+        
+      }
+
+      class Profil{
+        constructor(param){
+          this.test = param   
+        }
+
+        testen(param_2){
+          alert(param_2)
+        }
+      }
+
+      let object = new Profil('test')
+      console.log(object.test)
+      object.testen('jer alder')
+    </script> 
+    </body>
+</html>
