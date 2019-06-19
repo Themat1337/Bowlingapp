@@ -11,25 +11,6 @@
             border-collapse: collapse;
         }
         </style>
-        <script>
-            let punkte = JSON.parse(localStorage.getItem('Savegame'))
-            var g, ergebnis_div
-            for (g=1; g<=10; g++) {
-                var ergebnis_div = document.getElementById("Runde1_1")
-                ergebnis_div.innerHTML = document.getElementById("Runde"+g+"_1")
-                alert(ergebnis_div)
-
-                var ergebnis_div = document.getElementById(g+"_2")
-                ergebnis_div.innerHTML = document.getElementById(g+"_2")
-       /*   if(document.getElementById(g+"_1").value != '' && document.getElementById(g+"_2").value != '') {
-                document.getElementById("ergebnis"+g).value = parseInt(document.getElementById(g+"_1").value) + parseInt(document.getElementById(g+"_2").value)
-                var ergebnis_div = document.getElementById("ergebnis"+g)
-                ergebnis_div.innerHTML = document.getElementById("ergebnis"+g).value
-         */
-            }
-        
-
-        </script>
     </head>
     <body>
     </body>
@@ -123,6 +104,7 @@
             <td>
                 <input type="text" id="10_1" onchange="addition()">
                 <input type="text" id="10_2" onchange="addition()">
+                <input type="text" id="10_3" onchange="addition()">
                 <br>
                 <div style="border: 1px solid black" id="ergebnis10">0</div>
             </td>
@@ -130,83 +112,76 @@
     </table>
 
     <script>
+        let runde = 10      //Rundenanzahl
 
+        let punkte = JSON.parse(localStorage.getItem('Savegame'))
+        var g, ergebnis_div
+        for (g=1; g<=10; g++) {
+          //  var ergebnis_div = punkte.Runde1_1
+          //  ergebnis_div.innerHTML = document.getElementById(g+"_1")
+            document.getElementById(g+"_1").value = punkte["Runde"+g+"_1"]
+            var ergebnis_div = document.getElementById(g+"_1")
+            ergebnis_div.innerHTML = document.getElementById(g+"_1").value
+
+            document.getElementById(g+"_2").value = punkte["Runde"+g+"_2"]
+            var ergebnis_div = document.getElementById(g+"_2")
+            ergebnis_div.innerHTML = document.getElementById(g+"_2").value
+
+            document.getElementById(runde+"_3").value = punkte["Runde"+runde+"_3"]
+            var ergebnis_div = document.getElementById(runde+"_3")
+            ergebnis_div.innerHTML = document.getElementById(runde+"_3").value
+            
+            if (document.getElementById(g+"_1").value != ""){
+                addition()
+            } else if
+            (document.getElementById(g+"_2").value != ""){
+                addition()
+            }
     
     function addition() {
         var d
         for (d=1; d<=10; d++) {
-            if(document.getElementById(d+"_1").value != '' && document.getElementById(d+"_2").value != '') {
-                document.getElementById("ergebnis"+d).value = parseInt(document.getElementById(d+"_1").value) + parseInt(document.getElementById(d+"_2").value)
+            
+            if (runde == d){
+                document.getElementById("ergebnis"+d).value = parseInt(document.getElementById(d+"_1").value) + parseInt(document.getElementById(d+"_2").value) + parseInt(document.getElementById(runde+"_3").value)
                 var ergebnis_div = document.getElementById("ergebnis"+d)
                 ergebnis_div.innerHTML = document.getElementById("ergebnis"+d).value
+            } else if(document.getElementById(d+"_1").value != '' && document.getElementById(d+"_2").value != '') {
+                document.getElementById("ergebnis"+d).value = parseInt(document.getElementById(d+"_1").value) + parseInt(document.getElementById(d+"_2").value)
+                var ergebnis_div = document.getElementById("ergebnis"+d)
+                ergebnis_div.innerHTML = document.getElementById("ergebnis"+d).value  
             }
         }
     }
 
     function update(){
-      //  var savestorage 
       var i
         for (i=1; i<=10; i++) {
 
-        //savestorage = {
             let punkte = {}
             punkte.pnkt = {}
             key = 'R_1'
             punkte.pnkt = document.getElementById(i+'_1').value + document.getElementById(i+'_1').value
             punkte[key] = document.getElementById(i+'_1').value
             console.log(punkte[key])
-            punkte.Runde1_1 = {}
-            punkte.Runde1_2 = {}
-            punkte.Runde2_1 = {}
-            punkte.Runde2_2 = {}
-            punkte.Runde3_1 = {}
-            punkte.Runde3_2 = {}
-            punkte.Runde4_1 = {}
-            punkte.Runde4_2 = {}
-            punkte.Runde5_1 = {}
-            punkte.Runde5_2 = {}
-            punkte.Runde6_1 = {}
-            punkte.Runde6_2 = {}
-            punkte.Runde7_1 = {}
-            punkte.Runde7_2 = {}
-            punkte.Runde8_1 = {}
-            punkte.Runde8_2 = {}
-            punkte.Runde9_1 = {}
-            punkte.Runde9_2 = {}
-            punkte.Runde10_1 = {}
-            punkte.Runde10_2 = {} 
             
-            punkte.Runde1_1 = document.getElementById('1_1').value
-            punkte.Runde2_1 = document.getElementById('2_1').value
-            punkte.Runde3_1 = document.getElementById('3_1').value
-            punkte.Runde4_1 = document.getElementById('4_1').value
-            punkte.Runde5_1 = document.getElementById('5_1').value
-            punkte.Runde6_1 = document.getElementById('6_1').value
-            punkte.Runde7_1 = document.getElementById('7_1').value
-            punkte.Runde8_1 = document.getElementById('8_1').value
-            punkte.Runde9_1 = document.getElementById('9_1').value
-            punkte.Runde10_1 = document.getElementById('10_1').value
-            punkte.Runde1_2 = document.getElementById('1_2').value
-            punkte.Runde2_2 = document.getElementById('2_2').value
-            punkte.Runde3_2 = document.getElementById('3_2').value
-            punkte.Runde4_2 = document.getElementById('4_2').value
-            punkte.Runde5_2 = document.getElementById('5_2').value
-            punkte.Runde6_2 = document.getElementById('6_2').value
-            punkte.Runde7_2 = document.getElementById('7_2').value
-            punkte.Runde8_2 = document.getElementById('8_2').value
-            punkte.Runde9_2 = document.getElementById('9_2').value
-            punkte.Runde10_2 = document.getElementById('10_2').value
-
+            for (i=1;i<=10;i++) {
+                punkte["Runde" + i + "_1"] = document.getElementById(i + '_1').value
+                punkte["Runde" + i + "_2"] = document.getElementById(i + '_2').value
+                if(i == runde) {
+                    punkte["Runde" + i + "_3"] = document.getElementById(i + '_3').value
+                }
+            }
             key = 'R_2'
-            //punkte = {pnkt}
-            punkte[key] = document.getElementById(i+'_2').value
+            punkte;
+            //punkte[key] = document.getElementById(i+'_2').value
             localStorage.setItem('Savegame', JSON.stringify(punkte))
-            console.log(punkte)
 
 
 
         }
     }
+        }
        
     </script>
 
