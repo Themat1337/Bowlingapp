@@ -11,179 +11,104 @@
             border-collapse: collapse;
         }
         </style>
+
+        <style>
+            table{
+                width: 100%;
+            }
+            input{
+                width: calc(100% / 2 - 6px) !important;
+            }
+            td{
+                border: 1px solid black;
+                text-align: center;
+                border-collapse: collapse;
+            }
+        </style>
     </head>
-    <body>
+
+        <table style="border: 1px solid black">
+            <tr>
+                <td>Klaus</td>
+                <td>Runde 1</td>
+                <td>Runde 2</td>
+                <td>Runde 3</td>
+                <td>Runde 4</td>
+                <td>Runde 5</td>
+                <td>Runde 6</td>
+                <td>Runde 7</td>
+                <td>Runde 8</td>
+                <td>Runde 9</td>
+                <td>Runde 10</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="text" id="1_1" onchange="addition()">
+                    <input type="text" id="1_2" onchange="addition()">
+                    <br>
+                    <div style="border: 1px solid black" id="ergebnis1">0</div>
+                </td>
+                <td>
+                    <input type="text" id="2_1" onchange="addition()">
+                    <input type="text" id="2_2" onchange="addition()">
+                    <br>
+                    <div style="border: 1px solid black" id="ergebnis2">0</div>
+                </td>
+                <td>
+                    <input type="text" id="3_1" onchange="addition()">
+                    <input type="text" id="3_2" onchange="addition()">
+                    <br>
+                    <div style="border: 1px solid black" id="ergebnis3">0</div>
+                </td>
+                <td>
+                    <input type="text" id="4_1" onchange="addition()">
+                    <input type="text" id="4_2" onchange="addition()">
+                    <br>
+                    <div style="border: 1px solid black" id="ergebnis4">0</div>
+                </td>
+                <td>
+                    <input type="text" id="5_1" onchange="addition()">
+                    <input type="text" id="5_2" onchange="addition()">
+                    <br>
+                    <div style="border: 1px solid black" id="ergebnis5">0</div>
+                </td>
+                <td>
+                    <input type="text" id="6_1" onchange="addition()">
+                    <input type="text" id="6_2" onchange="addition()">
+                    <br>
+                    <div style="border: 1px solid black" id="ergebnis6">0</div>
+                </td>
+                <td>
+                    <input type="text" id="7_1" onchange="addition()">
+                    <input type="text" id="7_2" onchange="addition()">
+                    <br>
+                    <div style="border: 1px solid black" id="ergebnis7">0</div>
+                </td>
+                <td>
+                    <input type="text" id="8_1" onchange="addition()">
+                    <input type="text" id="8_2" onchange="addition()">
+                    <br>
+                    <div style="border: 1px solid black" id="ergebnis8">0</div>
+                </td>
+                <td>
+                    <input type="text" id="9_1" onchange="addition()">
+                    <input type="text" id="9_2" onchange="addition()">
+                    <br>
+                    <div style="border: 1px solid black"id="ergebnis9">0</div>
+                </td>
+                <td>
+                    <input type="text" id="10_1" onchange="addition()">
+                    <input type="text" id="10_2" onchange="addition()">
+                    <input type="text" id="10_3" onchange="addition()">
+                    <br>
+                    <div style="border: 1px solid black" id="ergebnis10">0</div>
+                </td>
+            </tr>
+        </table>
+
+        <script type="text/javascript" src="scripts.js"></script>
+        
+        <button style="cursor: pointer;" onclick="update()">Update</button>
     </body>
-</html>
- 
-
-    <style>
-        table{
-            width: 100%;
-        }
-        input{
-            width: calc(100% / 2 - 6px) !important;
-        }
-        td{
-            border: 1px solid black;
-            text-align: center;
-            border-collapse: collapse;
-        }
-    </style>
-
-    <table style="border: 1px solid black">
-        <tr>
-            <td>Klaus</td>
-            <td>Runde 1</td>
-            <td>Runde 2</td>
-            <td>Runde 3</td>
-            <td>Runde 4</td>
-            <td>Runde 5</td>
-            <td>Runde 6</td>
-            <td>Runde 7</td>
-            <td>Runde 8</td>
-            <td>Runde 9</td>
-            <td>Runde 10</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-                <input type="text" id="1_1" onchange="addition()">
-                <input type="text" id="1_2" onchange="addition()">
-                <br>
-                <div style="border: 1px solid black" id="ergebnis1">0</div>
-            </td>
-            <td>
-                <input type="text" id="2_1" onchange="addition()">
-                <input type="text" id="2_2" onchange="addition()">
-                <br>
-                <div style="border: 1px solid black" id="ergebnis2">0</div>
-            </td>
-            <td>
-                <input type="text" id="3_1" onchange="addition()">
-                <input type="text" id="3_2" onchange="addition()">
-                <br>
-                <div style="border: 1px solid black" id="ergebnis3">0</div>
-            </td>
-            <td>
-                <input type="text" id="4_1" onchange="addition()">
-                <input type="text" id="4_2" onchange="addition()">
-                <br>
-                <div style="border: 1px solid black" id="ergebnis4">0</div>
-            </td>
-            <td>
-                <input type="text" id="5_1" onchange="addition()">
-                <input type="text" id="5_2" onchange="addition()">
-                <br>
-                <div style="border: 1px solid black" id="ergebnis5">0</div>
-            </td>
-            <td>
-                <input type="text" id="6_1" onchange="addition()">
-                <input type="text" id="6_2" onchange="addition()">
-                <br>
-                <div style="border: 1px solid black" id="ergebnis6">0</div>
-            </td>
-            <td>
-                <input type="text" id="7_1" onchange="addition()">
-                <input type="text" id="7_2" onchange="addition()">
-                <br>
-                <div style="border: 1px solid black" id="ergebnis7">0</div>
-            </td>
-            <td>
-                <input type="text" id="8_1" onchange="addition()">
-                <input type="text" id="8_2" onchange="addition()">
-                <br>
-                <div style="border: 1px solid black" id="ergebnis8">0</div>
-            </td>
-            <td>
-                <input type="text" id="9_1" onchange="addition()">
-                <input type="text" id="9_2" onchange="addition()">
-                <br>
-                <div style="border: 1px solid black"id="ergebnis9">0</div>
-            </td>
-            <td>
-                <input type="text" id="10_1" onchange="addition()">
-                <input type="text" id="10_2" onchange="addition()">
-                <input type="text" id="10_3" onchange="addition()">
-                <br>
-                <div style="border: 1px solid black" id="ergebnis10">0</div>
-            </td>
-        </tr>
-    </table>
-
-    <script>
-        let runde = 10      //Rundenanzahl
-
-        let punkte = JSON.parse(localStorage.getItem('Savegame'))
-        var g, ergebnis_div
-        for (g=1; g<=10; g++) {
-          //  var ergebnis_div = punkte.Runde1_1
-          //  ergebnis_div.innerHTML = document.getElementById(g+"_1")
-            document.getElementById(g+"_1").value = punkte["Runde"+g+"_1"]
-            var ergebnis_div = document.getElementById(g+"_1")
-            ergebnis_div.innerHTML = document.getElementById(g+"_1").value
-
-            document.getElementById(g+"_2").value = punkte["Runde"+g+"_2"]
-            var ergebnis_div = document.getElementById(g+"_2")
-            ergebnis_div.innerHTML = document.getElementById(g+"_2").value
-
-            document.getElementById(runde+"_3").value = punkte["Runde"+runde+"_3"]
-            var ergebnis_div = document.getElementById(runde+"_3")
-            ergebnis_div.innerHTML = document.getElementById(runde+"_3").value
-            
-            if (document.getElementById(g+"_1").value != ""){
-                addition()
-            } else if
-            (document.getElementById(g+"_2").value != ""){
-                addition()
-            }
-    
-    function addition() {
-        var d
-        for (d=1; d<=10; d++) {
-            
-            if (runde == d){
-                document.getElementById("ergebnis"+d).value = parseInt(document.getElementById(d+"_1").value) + parseInt(document.getElementById(d+"_2").value) + parseInt(document.getElementById(runde+"_3").value)
-                var ergebnis_div = document.getElementById("ergebnis"+d)
-                ergebnis_div.innerHTML = document.getElementById("ergebnis"+d).value
-            } else if(document.getElementById(d+"_1").value != '' && document.getElementById(d+"_2").value != '') {
-                document.getElementById("ergebnis"+d).value = parseInt(document.getElementById(d+"_1").value) + parseInt(document.getElementById(d+"_2").value)
-                var ergebnis_div = document.getElementById("ergebnis"+d)
-                ergebnis_div.innerHTML = document.getElementById("ergebnis"+d).value  
-            }
-        }
-    }
-
-    function update(){
-      var i
-        for (i=1; i<=10; i++) {
-
-            let punkte = {}
-            punkte.pnkt = {}
-            key = 'R_1'
-            punkte.pnkt = document.getElementById(i+'_1').value + document.getElementById(i+'_1').value
-            punkte[key] = document.getElementById(i+'_1').value
-            console.log(punkte[key])
-            
-            for (i=1;i<=10;i++) {
-                punkte["Runde" + i + "_1"] = document.getElementById(i + '_1').value
-                punkte["Runde" + i + "_2"] = document.getElementById(i + '_2').value
-                if(i == runde) {
-                    punkte["Runde" + i + "_3"] = document.getElementById(i + '_3').value
-                }
-            }
-            key = 'R_2'
-            punkte;
-            //punkte[key] = document.getElementById(i+'_2').value
-            localStorage.setItem('Savegame', JSON.stringify(punkte))
-
-
-
-        }
-    }
-        }
-       
-    </script>
-
-    <button style="cursor: pointer;" onclick="update()">Update</button>
 </html>
